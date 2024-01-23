@@ -179,14 +179,13 @@
 
       <p class="challenge-text">¡Bienvenido a la invitación más misteriosa y emocionante que hayas recibido! Para ganar tu entrada a mi fiesta de cumpleaños, debes resolver un acertijo. Tienes <span style="font-weight: bold; color: white;">una sola oportunidad</span> para elegir entre dos opciones: un botón de verdad y uno de mentira. Elige sabiamente, pues solo aquellos que descubran la verdad serán parte de una celebración inolvidable. ¿Estás listo para el reto?</p>
 
+      <p>Te encuentras en una habitación con dos botones, uno verde y uno azul. Una voz te dice: 'Uno de estos botones te llevará a la libertad, y el otro a un laberinto sin fin. Aquí tienes una pista: Si el botón verde es el correcto, entonces el botón azul también te llevará a la libertad. Pero si el botón azul es el correcto, el botón verde te llevará al laberinto'. ¿Qué botón elegirás?</p>
       <div class="button-group">
         <div class="button-container">
-          <button class="button-circle" onclick="handleCorrectClick()">?</button>
-          <div class="button-description">Este botón dice que él dice la verdad y el otro miente</div>
+          <button style="background-color: blue;" class="button-circle" onclick="handleCorrectClick()">?</button>
         </div>
         <div class="button-container">
-            <button class="button-circle" onclick="handleIncorrectClick()">?</button>
-            <div class="button-description">Este botón dice que el primer botón dice la verdad</div>
+          <button style="background-color: green;" class="button-circle" onclick="handleIncorrectClick()">?</button>
         </div>
       </div>
     </div>

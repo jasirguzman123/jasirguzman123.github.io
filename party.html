@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasir's Birthday</title>
+      <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <style>
+      body {
+          background-color: #3E2723; /* Marrón oscuro */
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          font-family: 'Luckiest Guy', cursive;
+      }
+
+      .container {
+          background-color: #A1887F; /* Color más claro */
+          padding: 30px;
+          border-radius: 15px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+          text-align: center;
+          position: relative;
+          transition: filter 0.3s;
+          min-height: 50vh;
+          display: flex;
+          align-items: center;
+      }
+
+      .icon-circle {
+          width: 100px;
+          height: 100px;
+          background-color: #D7CCC8;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+          position: absolute;
+          top: -50px; /* Ajusta según lo necesites */
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 2rem;
+      }
+
+      .birthday-icon {
+          font-size: 40px; /* Ajusta el tamaño del ícono */
+      }
+
+      h1 {
+        color: white;
+      }
+
+      .gradient-text {
+        font-size: 40px; /* Tamaño del texto */
+        font-weight: bold;
+        text-align: center;
+        background: linear-gradient(to right, white, white); /* Degradado de blanco a azul a rojo */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent; /* Hace que el texto sea transparente, mostrando el degradado */
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.165);
+      }
+
+      .key {
+        background: linear-gradient(to right, gold, rgb(97, 83, 1));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent; /* Hace que el texto sea transparente, mostrando el degradado */
+        font-weight: bold;
+      }
+
+      .blur-effect {
+          transition: filter 0.3s;
+      }
+
+      .button-circle {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          font-size: 30px;
+          color: #fff;
+          line-height: 80px;
+          text-align: center;
+          background-color: black;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+          border: none;
+          display: block;
+          margin: 10px auto;
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .button-circle:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .button-circle:hover ~ .blur-effect {
+          filter: blur(4px);
+      }
+
+      .button-description {
+          text-align: center;
+          margin-top: 5px;
+      }
+
+      .button-group {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .challenge-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
+      .button-container a{
+        text-decoration: none;
+        color: white;
+      }
+
+      .button-container a:hover {
+        color: white;
+      }
+
+      .content {
+          transition: opacity 1s;
+          width: 100%;
+          opacity: 0;
+          display: none;
+      }
+
+      .content.active {
+          opacity: 1;
+          display: unset;
+      }
+
+      .success {
+        margin-top: 2rem;
+      }
+
+      .failure {
+        margin-top: 2rem;
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon-circle">
+      <svg fill="#000000" height="800px" width="800px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 470" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 470 470">
+        <g>
+          <path d="m462.5,420h-35.876v-142.99c0-0.02 0-30.01 0-30.01 0-26.191-21.309-47.5-47.5-47.5h-116.624v-68.191c0-9.649-7.851-17.5-17.5-17.5h-2.5v-22.5c0-4.142-3.358-7.5-7.5-7.5s-7.5,3.358-7.5,7.5v22.5h-2.5c-9.649,0-17.5,7.851-17.5,17.5v68.191h-123.043c-26.191,0-47.5,21.309-47.5,47.5v173h-29.457c-4.142,0-7.5,3.358-7.5,7.5s3.358,7.5 7.5,7.5h4.343l4.325,15.137c3.182,11.138 14.748,19.863 26.332,19.863h385c11.584,0 23.15-8.725 26.332-19.862l4.325-15.138h4.343c4.142,0 7.5-3.358 7.5-7.5s-3.358-7.5-7.5-7.5zm-240-288.691c0-1.355 1.145-2.5 2.5-2.5h20c1.355,0 2.5,1.145 2.5,2.5v68.191h-25v-68.191zm-138.043,83.191h294.667c17.92,0 32.5,14.58 32.5,32.5v23c-13.563,1.819-21.473,8.441-28.555,14.402-7.553,6.357-13.519,11.378-26.396,11.378s-18.842-5.021-26.396-11.378c-8.299-6.985-17.706-14.903-36.055-14.903-18.347,0-27.752,7.917-36.051,14.903-7.552,6.357-13.517,11.378-26.391,11.378-12.875,0-18.839-5.021-26.392-11.378-8.299-6.985-17.705-14.903-36.052-14.903-18.347,0-27.752,7.917-36.051,14.903-4.436,3.734-8.626,7.262-14.052,9.321-2.912,1.105-4.838,3.896-4.838,7.012v51.285c0,4.136-3.364,7.5-7.5,7.5-4.135,0-7.5-3.364-7.5-7.5v-51.039c0.105-3.161-1.803-6.105-4.835-7.256-5.427-2.06-9.618-5.588-14.054-9.323-7.081-5.961-14.989-12.583-28.55-14.402v-23c0.001-17.92 14.58-32.5 32.501-32.5zm-32.5,70.688c8.032,1.574 12.983,5.717 18.89,10.69 3.871,3.258 8.145,6.856 13.55,9.688v46.454c0,12.407 10.093,22.5 22.5,22.5s22.5-10.093 22.5-22.5l.001-46.454c5.404-2.832 9.679-6.43 13.549-9.688 7.552-6.357 13.517-11.378 26.391-11.378 12.875,0 18.84,5.021 26.392,11.378 8.299,6.985 17.705,14.903 36.052,14.903s27.753-7.917 36.051-14.903c7.552-6.357 13.517-11.378 26.391-11.378 12.877,0 18.843,5.021 26.396,11.379 8.299,6.985 17.706,14.902 36.055,14.902s27.755-7.917 36.055-14.902c5.909-4.973 10.861-9.117 18.896-10.691v134.812h-359.669v-134.812zm387.452,160.829c-1.343,4.701-7.02,8.983-11.909,8.983h-385c-4.89,0-10.566-4.282-11.909-8.983l-3.148-11.017h415.114l-3.148,11.017z"/>
+          <path d="m205.002,95.547c1.778,0 3.563-0.628 4.993-1.905 3.09-2.759 3.358-7.5 0.6-10.59-5.353-5.995-8.3-13.71-8.3-21.726 0-17.564 13.299-35.9 32.706-45.552 19.407,9.651 32.706,27.987 32.706,45.552 0,8.016-2.948,15.731-8.3,21.726-2.759,3.089-2.491,7.831 0.599,10.589 3.088,2.758 7.83,2.491 10.589-0.599 7.81-8.747 12.111-20.01 12.111-31.716 0-24.235-18.382-49.196-44.702-60.699-1.915-0.837-4.092-0.836-6.007,0-26.32,11.503-44.702,36.463-44.702,60.698 0,11.706 4.301,22.969 12.111,31.716 1.481,1.661 3.534,2.507 5.596,2.506z"/>
+        </g>
+      </svg>
+    </div>
+
+    <div id="challenge" class="content active">
+      <h1>¿Listo para el</h1>
+      <span style="font-weight: bold; font-size: 55px;">DESAFÍO?</span>
+      <div style="font-size: 20px;"><b>Descubre</b> la <span class="key">llave</span> a la</div>
+
+      <span class="gradient-text">
+        Fiesta de Cumpleaños
+      </span>
+
+      <p class="challenge-text">¡Bienvenido a la invitación más misteriosa y emocionante que hayas recibido! Para ganar tu entrada a mi fiesta de cumpleaños, debes resolver un acertijo. Tienes <span style="font-weight: bold; color: white;">una sola oportunidad</span> para elegir entre dos opciones: un botón de verdad y uno de mentira. Elige sabiamente, pues solo aquellos que descubran la verdad serán parte de una celebración inolvidable. ¿Estás listo para el reto?</p>
+
+      <div class="button-group">
+        <div class="button-container">
+          <button class="button-circle" onclick="handleCorrectClick()">?</button>
+          <div class="button-description">Este botón dice que él dice la verdad y el otro miente</div>
+        </div>
+        <div class="button-container">
+            <button class="button-circle" onclick="handleIncorrectClick()">?</button>
+            <div class="button-description">Este botón dice que el primer botón dice la verdad</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="failure" class="content">
+      <p>En las sombras del enigma, tu destino ha sido sellado. Un camino oculto en bruma, ahora eternamente vedado. Los secretos de esta celebración, para ti, permanecerán velados. La llave del misterio, en tus manos, se ha desvanecido. No más intentos te serán concedidos, en este laberinto has perecido.</p>
+    </div>
+
+    <div id="success" class="content">
+      <p>¡Felicidades! Has elegido correctamente. Bienvenido a la fiesta.</p>
+      <span>Lugar: <a target="_blank" href="https://www.google.es/maps/place/Edificio+Vallarta/@11.0211998,-74.8280833,17z/data=!3m1!4b1!4m6!3m5!1s0x8ef42d10c1d6c001:0x4c36fea89dec9c9c!8m2!3d11.0211945!4d-74.8255084!16s%2Fg%2F11fm_8_6s3?entry=ttu">Calle 99c # 64a - 45 apto 603</a></span>
+      <span>Hora: 7:30 P.M.</span>
+    </div>
+  </div>
+
+  <script>
+      function setCookie(name, value) {
+        var days = 7;
+          var expires = "";
+              var date = new Date();
+              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+              expires = "; expires=" + date.toUTCString();
+          document.cookie = name + "=" + (value || "") + expires + "; path=/";
+      }
+
+      // Función para obtener una cookie
+      function getCookie(name) {
+          var nameEQ = name + "=";
+          var ca = document.cookie.split(';');
+          for (var i = 0; i < ca.length; i++) {
+              var c = ca[i];
+              while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+              if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+          }
+          return null;
+      }
+
+      // Comprobar si el usuario ya ha hecho un intento
+      function checkAttempt() {
+          var userAttempt = getCookie("userAttempt");
+          console.log("userAttempt", userAttempt);
+          if (userAttempt === "incorrect") {
+            handleIncorrectClick()
+            alert("Lo siento, ya no tienes más intentos.");
+          }
+      }
+
+      // Llamar a checkAttempt cuando la página cargue
+      window.onload = checkAttempt;
+
+      // Manejar clic en el botón incorrecto
+      function handleIncorrectClick() {
+          setCookie("userAttempt", "incorrect", 7); // Guardar la elección por 7 días
+          document.getElementById('challenge').classList.remove('active');
+          document.getElementById('failure').classList.add('active');
+      }
+
+      function handleCorrectClick() {
+          document.getElementById('challenge').classList.remove('active');
+          document.getElementById('success').classList.add('active');
+      }
+  </script>
+</body>
+</html>
